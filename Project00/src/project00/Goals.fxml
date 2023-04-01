@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project00.GoalsController">
+   <children>
+      <ImageView blendMode="DARKEN" fitHeight="576.0" fitWidth="646.0" layoutX="1.0" opacity="0.43" pickOnBounds="true">
+         <image>
+            <Image url="@images/panner2.jpg" />
+         </image>
+      </ImageView>
+      <Button layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#Back_CourseMenu" prefHeight="27.0" prefWidth="61.0" style="-fx-background-color: transparent; -fx-background-radius: 18px;" text="&lt; Back" textFill="#94b49f">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="22.0" layoutY="119.0" text="Goal">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label id="courseDate" layoutX="223.0" layoutY="119.0" text="StartDate">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <DatePicker fx:id="startDate" layoutX="283.0" layoutY="115.0" prefHeight="25.0" prefWidth="130.0" />
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="156.0" layoutY="40.0" prefHeight="38.0" prefWidth="331.0" text="ADD YOUR GOALS" textAlignment="CENTER">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="33.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#7dba64" />
+                  <Stop color="#e89999" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <TextField fx:id="nameGoal" layoutX="52.0" layoutY="115.0" />
+      <Label id="courseDate" layoutX="442.0" layoutY="119.0" text="Deadline">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <DatePicker fx:id="deadLine" layoutX="494.0" layoutY="115.0" prefHeight="25.0" prefWidth="136.0" />
+      <Button fx:id="add" layoutX="418.0" layoutY="288.0" mnemonicParsing="false" onAction="#getAdd" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #4f704d; -fx-background-radius: 17px;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="418.0" layoutY="357.0" mnemonicParsing="false" onAction="#getClear" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #4f704d; -fx-background-radius: 17px;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="checked" layoutX="418.0" layoutY="479.0" mnemonicParsing="false" onAction="#getChecked" prefHeight="17.0" prefWidth="73.0" style="-fx-background-radius: 17px; -fx-background-color: #4f704d;" text="Done &gt;" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <ListView fx:id="ListGoals" layoutX="1.0" layoutY="268.0" prefHeight="285.0" prefWidth="136.0" />
+      <ListView fx:id="ListStartDate" layoutX="135.0" layoutY="268.0" prefHeight="287.0" prefWidth="87.0" />
+      <ListView fx:id="ListDeadLine" layoutX="220.0" layoutY="268.0" prefHeight="288.0" prefWidth="87.0" />
+      <ListView fx:id="checkedGoals" layoutX="503.0" layoutY="267.0" prefHeight="292.0" prefWidth="143.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="1.0" layoutY="244.0" opacity="0.68" stroke="#c0baba" strokeType="INSIDE" strokeWidth="2.0" width="136.0" />
+      <Text fill="#416e4a" layoutX="46.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: white;" text="Goals">
+         <font>
+            <Font name="Tw Cen MT" size="19.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="134.0" layoutY="244.0" opacity="0.68" stroke="#c0baba" strokeType="INSIDE" strokeWidth="2.0" width="87.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="220.0" layoutY="244.0" opacity="0.68" stroke="#c0baba" strokeType="INSIDE" strokeWidth="2.0" width="87.0" />
+      <Text fill="#416e4a" layoutX="142.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: white;" text="StartDate">
+         <font>
+            <Font name="Tw Cen MT" size="19.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Text>
+      <Text fill="#416e4a" layoutX="234.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: white;" text="Dealine">
+         <font>
+            <Font name="Tw Cen MT" size="19.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="503.0" layoutY="244.0" opacity="0.68" stroke="#c0baba" strokeType="INSIDE" strokeWidth="2.0" width="143.0" />
+      <Text fill="#416e4a" layoutX="509.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: white;" text="Checked Goals" wrappingWidth="129.4043994880799">
+         <font>
+            <Font name="Tw Cen MT" size="19.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Text>
+      <Label layoutX="214.0" layoutY="161.0" text="Priority">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="priority" layoutX="263.0" layoutY="157.0" prefWidth="150.0" promptText="Priority" />
+      <ListView fx:id="ListPriority" layoutX="306.0" layoutY="268.0" prefHeight="288.0" prefWidth="93.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="25.0" layoutX="306.0" layoutY="244.0" opacity="0.68" stroke="#c0baba" strokeType="INSIDE" strokeWidth="2.0" width="94.0" />
+      <Text fill="#416e4a" layoutX="321.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: white;" text="Priority">
+         <font>
+            <Font name="Tw Cen MT" size="19.0" />
+         </font>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Text>
+      <Text fx:id="Goal_info" fill="#8fbf9d" layoutX="26.0" layoutY="221.0" smooth="false" stroke="BLACK" strokeLineJoin="BEVEL" strokeType="OUTSIDE" wrappingWidth="595.21630859375">
+         <font>
+            <Font name="Avenir Next Condensed Bold" size="15.0" />
+         </font></Text>
+      <Button layoutX="418.0" layoutY="415.0" mnemonicParsing="false" onAction="#getUpdate" prefHeight="25.0" prefWidth="73.0" style="-fx-background-color: #4f704d; -fx-background-radius: 17px;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
